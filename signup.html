@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Mascotita! Tu tienda de mascotas.</title>
+  <style>
+    .centrado-div {
+      width: 50%;
+      left: 50%;
+      margin-left: -25%;
+      top: 10%;
+      position: absolute;
+      border: 1px solid slateblue;
+      background-color: violet;
+      padding: 20px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="sobrenosotros.html">Sobre nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactanos.html">Contactanos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signup.html">Registrarse</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="signin.html">Iniciar sesion</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <form action="/action_page.php">
+    <div class="mb-3 mt-3">
+      <div class="container">
+        <div class="centrado">
+          <label for="email" class="form-label">Email:</label>
+          <div class="input-group">
+            <input type="email" class="form-control" id="email" requiredplaceholder="Enter email" name="email">
+            <span class="input-group-text">@gmail.com</span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña:</label>
+          <input type="password" class="form-control" id="password" requiredplaceholder="Enter password" name="pswd">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Repita su Contraseña:</label>
+          <input type="password" class="form-control" id="Contrasenna" requiredplaceholder="Enter password" name="pswd">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="Nombres" requieredplaceholder="Enter name" name="pswd">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="Apellidos" requiredplaceholder="Enter surname" name="pswd">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Direccion</label>
+          <input type="text" class="form-control" id="Direccion" placeholder="Enter direction" name="pswd">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Numero de telefono</label>
+          <input type="number" class="form-control" id="telefono" requiredplaceholder="Enter phone number" name="pswd">
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="Edad" requiredplaceholder="Enter " name="pswd">
+        </div>
+        <div class="form-check mb-3">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="remember"> Guardar
+          </label>
+          <br>
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+          <button type="reset" class="btn btn-outline-danger">Limpiar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="mt-5 p-5 bg-dark text-white text-center">
+    <p>Derechos reservados a @Felipe y @Diego</p>
+  </div>
+</body>
+
+</html>
