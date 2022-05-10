@@ -49,7 +49,7 @@
     </div>
   </nav>
   <div class="medio">
-    <form action="/action_page.php" class="was-validated">
+    <form id ="basic form" action="/action_page.php" class="was-validated">
       <h4>Inicio de sesion</h4>
       <div class="mb-3 mt-3">
         <label for="Email" class="form-label">Email:</label>
@@ -82,5 +82,21 @@
   </div>
 
 </body>
-
+<script>
+  $(document).ready(function(){
+    $("basic form").values({
+      rules: {
+        Email : {
+          required: " debe ingresar algun dato ", 
+          minlenght: " debe tener un minimo de 5 caracteres " 
+        },
+        Contraseña: {
+          required: "debe ingresar algun dato ",
+          minlenght: "debe tener un minimo de 5 caracteres",
+          
+        } 
+      }
+    })
+  })
+</script>
 </html>

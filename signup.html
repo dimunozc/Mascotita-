@@ -52,7 +52,7 @@
 </nav>
 
 <body>
-  <form action="/action_page.php">
+  <form id="form" action="/action_page.php">
     <div class="mb-3 mt-3">
       <div class="container">
         <div class="centrado">
@@ -105,4 +105,16 @@
     <p>Derechos reservados a @Felipe y @Diego</p>
   </div>
 </body>
+<script>
+  $(document).ready(function(){
+    $("form").values({
+      rules: {
+        Direccion:{
+          required: "debe ingresar algun dato",
+          
+        } 
+      }
+    })
+  })
+</script>
 </html>
