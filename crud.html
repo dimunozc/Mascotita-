@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+    <title></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -339,6 +339,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="perfil.html">Perfil</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="crud.html">historial de usuarios</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -490,7 +493,7 @@
     <div id="addRegistroModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form id="formulario">
                     <div class="modal-header">
                         <h4 class="modal-title">Agregar Datos</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -520,7 +523,7 @@
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input id="btnGuardar" type="submit" class="btn btn-success" value="agregar">
+                        <input id="mdlAgregar" type="submit" class="btn btn-success" value="agregar">
                     </div>
                 </form>
             </div>
@@ -592,12 +595,11 @@
 <script type="text/javascript">
     jQuery(document).ready(function(){
         
-        $("#tbldatos").validate({
-            submitHandler: function(table) {
-
+        $("#formulario").validate({
+            submitHandler: function(form) {
                 if($('#txtAux').val() == '0'){
                     $.ajax({
-                        url: "agregar.php",
+                        url: "https://www.colex.cl/duoc/PGY3121/agregar.php",
                         type: "POST",
                         data: ({rut:$('#rut').val(),
                             nombre:$('#nombre').val(),
@@ -619,7 +621,7 @@
                     });
                 }else{
                     $.ajax({
-                        url: "actualizar.php",
+                        url: "https://www.colex.cl/duoc/PGY3121/actualizar.php",
                         type: "POST",
                         data: ({rut:$('#rut').val(),
                             nombre:$('#nombre').val(),
@@ -643,12 +645,9 @@
             }     
         });					    
         
-        //jQuery("#btnGuardar").click(function(){
-        //});
-        
         let data = [];
         $.ajax({
-            url: "listado.php",
+            url: "https://www.colex.cl/duoc/PGY3121/listado.php",
             type: "POST",
             dataType: "text",
             async:false,
@@ -684,7 +683,7 @@
         
         if(confirm("Desea eliminar este registro?")){
             $.ajax({
-                url: "eliminar.php",
+                url: "https://www.colex.cl/duoc/PGY3121/eliminar.php",
                 type: "POST",
                 data: data,
                 dataType: "text",
