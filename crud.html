@@ -523,7 +523,7 @@
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input id="mdlAgregar" type="submit" class="btn btn-success" value="agregar">
+                        <button onclick="fncAgregar();" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#mdlAgregar" data-bs-whatever="@mdo"><i class="bi bi-plus-square-fill"></i> Agregar</button>
                     </div>
                 </form>
             </div>
@@ -655,10 +655,11 @@
             }
         });							
     });   
-    var $b1 = $('<button type="button" class="btn btn-outline-warning" data-toggle="tooltip" data-placement="top" data-original-title="Editar"><i class="bi bi-pencil-fill"></i></button>').off("click").on("click", { tr: r }, fncEditar);
-    var $b2 = $('<button type="button" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar"><i class="bi bi-trash"></i></button>').off("click").on("click", { tr: r }, fncEliminar); 
+    var $b1 = $('<i class="material-icons"data-toggle="tooltip" title="Editar">&#xE254;</i>').off("click").on("click", fncEditar);
+    var $b2 = $('<input type="submit" class="btn btn-danger" value="Delete">').off("click").on("click", fncEliminar); 
     $("div.toolbar").css("float", "left");
 	$("div.toolbar").append('<button onclick="fncAgregar();" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#mdlAgregar" data-bs-whatever="@mdo"><i class="bi bi-plus-square-fill"></i> Agregar</button>');                    
+    
     function fncAgregar(){
         $('#rut').parents('form')[0].reset();
         $('#rut').removeAttr('disabled');
