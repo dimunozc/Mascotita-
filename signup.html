@@ -52,43 +52,43 @@
 </nav>
 
 <body>
-  <form id="form" action="/action_page.php">
+  <form id="formulario" action="/action_page.php">
     <div class="mb-3 mt-3">
       <div class="container">
         <div class="centrado">
           <label for="email" class="form-label">Email:</label>
           <div class="input-group">
-            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            <input type="email" class="form-control" id="email" placeholder="Enter email" >
             <span class="input-group-text">@gmail.com</span>
           </div>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña:</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter password" name="pswd">
+          <input type="password" class="form-control" id="contra" placeholder="Enter password" >
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Repita su Contraseña:</label>
-          <input type="password" class="form-control" id="Contrasenna" placeholder="Enter password" name="pswd">
+          <input type="password" class="form-control" id="Contras" placeholder="Enter password" >
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Nombres</label>
-          <input type="text" class="form-control" id="Nombres" placeholder="Enter name" name="pswd">
+          <input type="text" class="form-control" id="Nombres" placeholder="Enter name" >
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" id="Apellidos" placeholder="Enter surname" name="pswd">
+          <input type="text" class="form-control" id="Apellidos" placeholder="Enter surname" >
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Direccion</label>
-          <input type="text" class="form-control" id="Direccion" placeholder="Enter direction" name="pswd">
+          <input type="text" class="form-control" id="Direccion" placeholder="Enter direction" >
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Numero de telefono</label>
-          <input type="number" class="form-control" id="telefono" placeholder="Enter phone number" name="pswd">
+          <input type="number" class="form-control" id="telefono" placeholder="Enter phone number" >
         </div>
         <div class="mb-3">
           <label for="" class="form-label">Edad</label>
-          <input type="number" class="form-control" id="Edad" placeholder="Enter " name="pswd">
+          <input type="number" class="form-control" id="Edad" placeholder="Enter " >
         </div>
         <div class="form-check mb-3">
           <label class="form-check-label">
@@ -106,15 +106,54 @@
   </div>
 </body>
 <script>
-  $(document).ready(function(){
-    $("form").values({
-      rules: {
-        Direccion:{
-          required: "debe ingresar algun dato",
-          
-        } 
-      }
-    })
-  })
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("formulario").addEventListener('submit', validarFormulario); 
+});
+
+function validarFormulario(evento) {
+  evento.preventDefault();
+  var mail = document.getElementById('email').value;
+  if(mail.length > 5 ){
+    alert('el email es muy corto')
+    return;
+  }
+  var Contraseña = document.getElementById('contra').value;
+  if (Contraseña.length < 5) {
+    alert('La clave no es válida');
+    return;
+  }
+  var clave2 = document.getElementById('Contras').value;
+  if (clave2.length < 5) {
+    alert('La clave no es válida');
+    return;
+  }
+  var nombre = document.getElementById('Nombres').value;
+  if (nombre.length == 0) {
+    alert('debe ingresar un nombre');
+    return;
+  }
+  var Apellido = document.getElementById('Apellidos').value;
+  if (Apellido.length == 0) {
+    alert('debe ingresar un apellido');
+    return;
+  }
+  var Direccion = document.getElementById('Direccion').value;
+  if (Direccion.length == 0 ) {
+    alert('debe ingresar un direccion');
+    return;
+  }
+  var Telefono = document.getElementById('telefono').value;
+  if (Telefono.length < 9 ) {
+    alert('numero no valido ');
+    return;
+  }
+  var Edad = document.getElementById('Edad').value;
+  if (Edad.length == 0) {
+    alert('debe ingresar su edad');
+    return;
+  }
+  
+  this.submit();
+}
 </script>
 </html>
