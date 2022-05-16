@@ -21,6 +21,7 @@
       padding: 20px;
       border-radius: 20px;
     }
+    
   </style>
 </head>
 
@@ -52,16 +53,13 @@
 </nav>
 
 <body>
-  <form id="formulario" action="/action_page.php">
+  <form id="form" >
     <div class="mb-3 mt-3">
       <div class="container">
         <div class="centrado">
           <label for="email" class="form-label">Email:</label>
-          <div class="input-group">
-            <input type="email" class="form-control" id="email" placeholder="Enter email" >
-            <span class="input-group-text">@gmail.com</span>
+          <input type="email" class="form-control" id="email" placeholder="Enter email" >
           </div>
-        </div>
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña:</label>
           <input type="password" class="form-control" id="contra" placeholder="Enter password" >
@@ -107,21 +105,26 @@
 </body>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("formulario").addEventListener('submit', validarFormulario); 
+  document.getElementById("form").addEventListener('submit', validarFormulario); 
 });
 
-function validarFormulario(evento) {
-  evento.preventDefault();
-  var mail = document.getElementById('email').value;
-  if(mail.length > 5 ){
-    alert('el email es muy corto')
-    return;
+function validarFormulario(event) {
+  event.preventDefault();
+  var email = document.getElementById('email').value;
+  if(email.length == 0){
+    alert('mail no valido')
   }
+  var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+  var email = document.getElementById('email').value;
+if (expresion.test(email)){
+    alert('mail no valido ');
+}
+
   var Contraseña = document.getElementById('contra').value;
   if (Contraseña.length < 5) {
     alert('La clave no es válida');
     return;
-  }
+  } 
   var clave2 = document.getElementById('Contras').value;
   if (clave2.length < 5) {
     alert('La clave no es válida');
