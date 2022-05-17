@@ -53,7 +53,7 @@
 </nav>
 
 <body>
-  <form id="form" >
+  <form id="form" onsubmit="return false;" >
     <div class="mb-3 mt-3">
       <div class="container">
         <div class="centrado">
@@ -61,11 +61,11 @@
           <input type="email" class="form-control" id="email" placeholder="Enter email" >
           </div>
         <div class="mb-3">
-          <label for="password" class="form-label">Contraseña:</label>
+          <label for="password" class="form-label">Contrasena:</label>
           <input type="password" class="form-control" id="contra" placeholder="Enter password" >
         </div>
         <div class="mb-3">
-          <label for="" class="form-label">Repita su Contraseña:</label>
+          <label for="" class="form-label">Repita su Contrasena:</label>
           <input type="password" class="form-control" id="Contras" placeholder="Enter password" >
         </div>
         <div class="mb-3">
@@ -93,7 +93,7 @@
             <input class="form-check-input" type="checkbox" name="remember"> Guardar
           </label>
           <br>
-          <button type="submit" class="btn btn-primary">Registrarse</button>
+          <button type="button" class="btn btn-primary" id="btnEnviar">Registrarse</button>
           <button type="reset" class="btn btn-outline-danger">Limpiar</button>
         </div>
       </div>
@@ -104,59 +104,60 @@
   </div>
 </body>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("form").addEventListener('submit', validarFormulario); 
+
+jQuery(document).ready(function(){
+  jQuery('#btnEnviar').click(function(){
+
+    var html = '';
+    var email = jQuery('#email').val();
+    if(email.length == 0){
+        html += '\nmail no valido';
+      }
+      var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+      var email = jQuery('#email').val();
+    if (!expresion.test(email)){
+        html += '\nmail no valido ';
+    }
+
+      var Contrasena = jQuery('#contra').val();
+      if (Contrasena.length < 5) {
+        html += '\nLa clave no es válida';
+      } 
+      var clave2 = jQuery('#Contras').val();
+      if (clave2.length < 5) {
+        html += '\nLa clave no es válida';
+      }
+      var nombre = jQuery('#Nombres').val();
+      if (nombre.length == 0) {
+        html += '\ndebe ingresar un nombre';
+      }
+      var Apellido = jQuery('#Apellidos').val();
+      if (Apellido.length == 0) {
+        html += '\ndebe ingresar un apellido';
+      }
+      var Direccion = jQuery('#Direccion').val();
+      if (Direccion.length == 0 ) {
+        html += '\ndebe ingresar un direccion';
+      }
+      var Telefono = jQuery('#telefono').val();
+      if (Telefono.length < 9 ) {
+        html += '\nnumero no valido ';
+      }
+      var Edad = jQuery('#Edad').val();
+      if (Edad.length == 0) {
+        html += '\ndebe ingresar su edad';
+      }
+
+      if(html != ''){
+        alert(html);
+        return;
+      }
+      else{
+        alert('codigo para enviar a crear');
+      }
+
+  });
 });
 
-function validarFormulario(event) {
-  event.preventDefault();
-  var email = document.getElementById('email').value;
-  if(email.length == 0){
-    alert('mail no valido')
-  }
-  var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
-  var email = document.getElementById('email').value;
-if (expresion.test(email)){
-    alert('mail no valido ');
-}
-
-  var Contraseña = document.getElementById('contra').value;
-  if (Contraseña.length < 5) {
-    alert('La clave no es válida');
-    return;
-  } 
-  var clave2 = document.getElementById('Contras').value;
-  if (clave2.length < 5) {
-    alert('La clave no es válida');
-    return;
-  }
-  var nombre = document.getElementById('Nombres').value;
-  if (nombre.length == 0) {
-    alert('debe ingresar un nombre');
-    return;
-  }
-  var Apellido = document.getElementById('Apellidos').value;
-  if (Apellido.length == 0) {
-    alert('debe ingresar un apellido');
-    return;
-  }
-  var Direccion = document.getElementById('Direccion').value;
-  if (Direccion.length == 0 ) {
-    alert('debe ingresar un direccion');
-    return;
-  }
-  var Telefono = document.getElementById('telefono').value;
-  if (Telefono.length < 9 ) {
-    alert('numero no valido ');
-    return;
-  }
-  var Edad = document.getElementById('Edad').value;
-  if (Edad.length == 0) {
-    alert('debe ingresar su edad');
-    return;
-  }
-  
-  this.submit();
-}
 </script>
 </html>
