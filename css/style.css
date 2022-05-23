@@ -1,5 +1,5 @@
 :root {
-    --primary: #111B54;
+    --primary: #0d6efd;
     --light: #ffffff;
     --grey: #efefef;
 }
@@ -8,7 +8,6 @@ body {
     overflow: hidden;
     font-family: 'Muli', sans-serif;
     font-weight: 300;
-    color: var(--primary);
 }
 
 a:hover {

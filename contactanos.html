@@ -113,7 +113,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-12 text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                    <button id="enviar" type="submit" class="btn btn-primary btn-lg">Enviar</button>
                                 </div>
                             </div>
                         </fieldset>
@@ -131,5 +131,48 @@
 
 
 </body>
+<script>
 
+    jQuery(document).ready(function(){
+      jQuery('#enviar').click(function(){
+    
+        var html = '';
+        var email = jQuery('#email').val();
+        if(email.length == 0){
+            html += '\nmail no valido';
+          }
+          var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+          var email = jQuery('#email').val();
+        if (!expresion.test(email)){
+            html += '\nmail no valido ';
+        }
+          var nombre = jQuery('#fname').val();
+          if (nombre.length == 0) {
+            html += '\ndebe ingresar un nombre';
+          }
+          var Apellido = jQuery('#lname').val();
+          if (Apellido.length == 0) {
+            html += '\ndebe ingresar un apellido';
+          }
+          var Telefono = jQuery('#phone').val();
+          if (Telefono.length < 9 ) {
+            html += '\nnumero no valido ';
+          }
+          var message = jQuery('#message').val();
+          if (message.length == 0 ){
+              html += '\ndebe poner un mensaje ';
+          }
+    
+          if(html != ''){
+            alert(html);
+            return;
+          }
+          else{
+            alert('codigo para enviar a crear');
+          }
+    
+      });
+    });
+    
+    </script>
 </html>

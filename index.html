@@ -28,6 +28,8 @@
       padding-left: 20px;
     }
   </style>
+  <script src="./tienda.js"></script>
+  <link rel="stylesheet" href="./carrito.css">
 </head>
 
 <body>
@@ -82,67 +84,110 @@
           <li class="nav-item ">
             <a class="nav-link" href="signin.html">Iniciar sesion</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrito.html">Carrito</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container mt-3">
-    <div class="row">
-      <div class="col-sm-3 my-5 border text-center margen pading">
-        <img src="https://cdn.shopify.com/s/files/1/0185/9786/products/13_Yaxha_Camel_Frente_sin_mo_o.jpg?v=1619234070"
-          height="200px">
-        <h5>Collar para perros ajustable.</h5>
-        <p>Ideal para perros, también hay para gatos.</p>
-        <button type="submit" class="btn btn-success" id="AddAlCarro">Agregar al carro</button>
-        <a class="btn btn-outline-primary" href="detalleproducto.html" role="button">Detalles</a>
-      </div>
-      <div class="col-sm-3 my-5 border text-center margen pading">
-        <img
-          src="https://www.petco.com.mx/medias/132403.jpg-1200ftw?context=bWFzdGVyfHJvb3R8MTY2MzQzfGltYWdlL2pwZWd8aDAwL2gzMC85NTg4NDA1NDAzNjc4LmpwZ3xmNWFiOGM5ZjU2YWJhOGVhNmJlYmExZTBlMzg0ZDU3MDlhZmQzMTQyZWU0YmUwNTNhYmJkZGExMmQwZDg0YTVm"
-          height="200px">
-        <h5>Cama para perros/gatos.</h5>
-        <p>Calentita y suavecita para el campeon de la casa.</p>
-        <button type="submit" class="btn btn-success" id="AddAlCarro">Agregar al carro</button>
-        <a class="btn btn-outline-primary" href="detalleproducto.html" role="button">Detalles</a>
-      </div>
-      <div class="col-sm-3 my-5 border text-center margen pading">
-        <img src="https://img.bestdealplus.com/ae04/kf/Hd683345b4bf44197b87e9370e44cbc86P.jpg" height="200px">
-        <h5>Guante para mascotas.</h5>
-        <p>Ideal para peinar y quitar exceso de pelaje.</p>
-        <button type="submit" class="btn btn-success" id="AddAlCarro">Agregar al carro</button>
-        <a class="btn btn-outline-primary" href="detalleproducto.html" role="button">Detalles</a>
-      </div>
-      <div class="col-sm-3 my-5 border text-center margen pading">
-        <img src="https://cdn.shopify.com/s/files/1/0185/9786/products/13_Yaxha_Camel_Frente_sin_mo_o.jpg?v=1619234070"
-          height="200px">
-        <h5>Collar para perros ajustable.</h5>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        <button type="submit" class="btn btn-success" id="AddAlCarro">Agregar al carro</button>
-        <a class="btn btn-outline-primary" href="detalleproducto.html" role="button">Detalles</a>
-      </div>
-      <div class="col-sm-3 my-5 border text-center margen pading">
-        <img src="https://cdn.shopify.com/s/files/1/0185/9786/products/13_Yaxha_Camel_Frente_sin_mo_o.jpg?v=1619234070"
-          height="200px">
-        <h5>Collar para perros ajustable.</h5>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        <button type="submit" class="btn btn-success" id="AddAlCarro">Agregar al carro</button>
-        <a class="btn btn-outline-primary" href="detalleproducto.html" role="button">Detalles</a>
-      </div>
-      <div class="col-sm-3 my-5 border text-center margen pading">
-        <img src="https://cdn.shopify.com/s/files/1/0185/9786/products/13_Yaxha_Camel_Frente_sin_mo_o.jpg?v=1619234070"
-          height="200px">
-        <h5>Collar para perros ajustable.</h5>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        <button type="submit" class="btn btn-success" id="AddAlCarro">Agregar al carro</button>
-        <a class="btn btn-outline-primary" href="detalleproducto.html" role="button">Detalles</a>
-      </div>
-    </div>
-  </div>
+  <section class="store" style="text-align: center;">
+    <div class="container">
+        <div class="items">
+            <div class="row">
 
-  <div class="mt-5 p-5 bg-dark text-white text-center">
-    <p>Derechos reservados a @Felipe y @Diego</p>
-  </div>
+                <div class="col-12 col-md-6">
+                    <div class="item shadow mb-4">
+                        <h3 class="item-title">Cama para perros/gatos.</h3>
+                        <img class="item-image" src="https://www.petco.com.mx/medias/132403.jpg-1200ftw?context=bWFzdGVyfHJvb3R8MTY2MzQzfGltYWdlL2pwZWd8aDAwL2gzMC85NTg4NDA1NDAzNjc4LmpwZ3xmNWFiOGM5ZjU2YWJhOGVhNmJlYmExZTBlMzg0ZDU3MDlhZmQzMTQyZWU0YmUwNTNhYmJkZGExMmQwZDg0YTVm"
+                        height="200px">
+                        <p>Calentita y suavecita para el campeon de la casa.</p>
+                        <div class="item-details">
+                            <h4 class="item-price">$ 5.990</h4>
+                            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="item shadow mb-4">
+                        <h3 class="item-title">Guante para mascotas.</h3>
+
+                        <img class="item-image" src="https://img.bestdealplus.com/ae04/kf/Hd683345b4bf44197b87e9370e44cbc86P.jpg" height="200px">
+                        <p>Ideal para peinar y quitar exceso de pelaje.</p>
+                        <div class="item-details">
+                            <h4 class="item-price">$ 5.990</h4>
+                            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="item shadow mb-4">
+                        <h3 class="item-title">Collar para perros ajustable.</h3>
+
+                        <img class="item-image" src="https://cdn.shopify.com/s/files/1/0185/9786/products/13_Yaxha_Camel_Frente_sin_mo_o.jpg?v=1619234070" height="200px">
+                        <p>Ideal para perros, también hay para gatos.</p>
+                        <div class="item-details">
+                            <h4 class="item-price">$ 5.990</h4>
+                            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="item shadow mb-4">
+                        <h3 class="item-title">Collar para perros ajustable.</h3>
+
+                        <img class="item-image" src="https://cdn.shopify.com/s/files/1/0185/9786/products/13_Yaxha_Camel_Frente_sin_mo_o.jpg?v=1619234070" height="200px">
+                        <p>Ideal para perros, también hay para gatos.</p>
+                        <div class="item-details">
+                            <h4 class="item-price">$ 5.990</h4>
+                            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="item shadow mb-4">
+                        <h3 class="item-title">Collar para perros ajustable.</h3>
+
+                        <img class="item-image" src="https://cdn.shopify.com/s/files/1/0185/9786/products/13_Yaxha_Camel_Frente_sin_mo_o.jpg?v=1619234070" height="200px">
+                        <p>Ideal para perros, también hay para gatos.</p>
+                        <div class="item-details">
+                            <h4 class="item-price">$ 5.990</h4>
+                            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="item shadow mb-4">
+                        <h3 class="item-title">Collar para perros ajustable.</h3>
+                        <p>Ideal para perros, también hay para gatos.</p>
+                        <img class="item-image" src="https://cdn.shopify.com/s/files/1/0185/9786/products/13_Yaxha_Camel_Frente_sin_mo_o.jpg?v=1619234070" height="200px">
+
+                        <div class="item-details">
+                            <h4 class="item-price">$ 5.990</h4>
+                            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="mt-5 p-5 bg-dark text-white text-center">
+  <p>Derechos reservados a @Felipe y @Diego</p>
+</div>
+
+
+
+
 
 </body>
 
