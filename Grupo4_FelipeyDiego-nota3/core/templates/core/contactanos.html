@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Mascotita! Tu tienda de mascotas.</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+
+        .margen {
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            padding: 0em 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .centrar {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobrenosotros.html">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactanos.html">Contactanos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Registrarse</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="signin.html">Iniciar sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form class="form-horizontal" method="post">
+                        <fieldset>
+                            <legend class="text-center header">Contactanos</legend>
+
+                            <div class="form-group, margen">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i
+                                        class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-12">
+                                    <input id="fname" name="name" type="text" placeholder="Nombre" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group, margen">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i
+                                        class="fa fa-user bigicon"></i></span>
+                                <div class="col-md-12">
+                                    <input id="lname" name="name" type="text" placeholder="Apellido"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group, margen">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i
+                                        class="fa fa-envelope-o bigicon"></i></span>
+                                <div class="col-md-12">
+                                    <input id="email" name="email" type="text" placeholder="Email" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group, margen">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i
+                                        class="fa fa-phone-square bigicon"></i></span>
+                                <div class="col-md-12">
+                                    <input id="phone" name="phone" type="text" placeholder="Celular"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group, margen">
+                                <span class="col-md-1 col-md-offset-2 text-center"><i
+                                        class="fa fa-pencil-square-o bigicon"></i></span>
+                                <div class="col-md-12">
+                                    <textarea class="form-control" id="message" name="message"
+                                        placeholder="Introduzca su masaje para nosotros aquí. Nos pondremos en contacto con usted dentro de 2 días hábiles."
+                                        rows="7"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <button id="enviar" type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="mt-5 p-5 bg-dark text-white text-center">
+            <p>Derechos reservados a @Felipe y @Diego</p>
+        </div>
+    </footer>
+
+
+</body>
+<script>
+
+    jQuery(document).ready(function(){
+      jQuery('#enviar').click(function(){
+    
+        var html = '';
+        var email = jQuery('#email').val();
+        if(email.length == 0){
+            html += '\nmail no valido';
+          }
+          var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+          var email = jQuery('#email').val();
+        if (!expresion.test(email)){
+            html += '\nmail no valido ';
+        }
+          var nombre = jQuery('#fname').val();
+          if (nombre.length == 0) {
+            html += '\ndebe ingresar un nombre';
+          }
+          var Apellido = jQuery('#lname').val();
+          if (Apellido.length == 0) {
+            html += '\ndebe ingresar un apellido';
+          }
+          var Telefono = jQuery('#phone').val();
+          if (Telefono.length < 9 ) {
+            html += '\nnumero no valido ';
+          }
+          var message = jQuery('#message').val();
+          if (message.length == 0 ){
+              html += '\ndebe poner un mensaje ';
+          }
+    
+          if(html != ''){
+            alert(html);
+            return;
+          }
+          else{
+            alert('codigo para enviar a crear');
+          }
+    
+      });
+    });
+    
+    </script>
+</html>
