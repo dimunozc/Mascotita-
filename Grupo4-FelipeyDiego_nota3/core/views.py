@@ -45,7 +45,7 @@ def form_mod_producto(request, id):
             form.save()
             datos['mensaje'] = 'Producto modificado!.',
     
-    return render(request, 'Petshop/form_producto.html', datos) 
+    return render(request, 'core/form_producto.html', datos) 
 
 def signin(request):
     return render(request, 'core/signin.html')
