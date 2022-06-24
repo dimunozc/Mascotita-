@@ -1,51 +1,51 @@
 
+from ast import If
 from django.shortcuts import render, redirect
-from .models import *
+from matplotlib.pyplot import table
+from requests import post
+from .models import Producto
 from .forms import ProductoForm
 
 # Create your views here.
 def index(request):
-    productos = Producto.objects.all()
+    Producto= Producto.object.all()
 
     datos = {
-        'productos': productos
+        'productos': Producto
     }
-
-    return render(request, 'core/index.html', datos) 
+    return render(request, 'core/table.html', datos)
 
 def form_producto(request):
     datos = {
         'form': ProductoForm()
+
     }
-
     if request.method == 'POST':
-        form = ProductoForm(request.POST)
-        if form.is_valid:
-            form.save()
-            datos['mensaje'] = 'Producto agregado!.'
+        formulario = ProductoForm(request.POST)
+        if formulario.is_valid:
+            formulario.save()
+            datos ['mensaje'] = "Guardados correctamente"
 
-    return render(request, 'core/form_producto.html', datos) 
+    return render(request, 'core/form_producto.html', datos)
 
-def form_del_producto(request, id):
-    producto = Producto.objects.get(ProductoId = id)
-    producto.delete()
-
-    return redirect(to='index')
 
 def form_mod_producto(request, id):
-    producto = Producto.objects.get(ProductoId = id)
-
+    Producto = Producto.object.get(ProductoId=id)
     datos = {
-        'form': ProductoForm(instance=producto)
+        'form': ProductoForm(instance=Producto)
     }
-
     if request.method == 'POST':
-        form = ProductoForm(request.POST)
-        if form.is_valid:
-            form.save()
-            datos['mensaje'] = 'Producto modificado!.',
-    
-    return render(request, 'core/form_producto.html', datos) 
+        formulario = ProductoForm(data=request.POST,instance=Producto)
+        if formulario.is_valid:
+            formulario.save()
+            datos['mensaje'] = "Modificados correctamente"
+
+    return render(request, 'core/form_mod_producto', datos)
+
+def for_del_vehiculo(request, id):
+    Producto = Producto.object.get(ProductoId=id)
+    Producto.delete()
+    return redirect(to=table)
 
 def signin(request):
     return render(request, 'core/signin.html')
