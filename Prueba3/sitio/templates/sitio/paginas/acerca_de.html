@@ -1,0 +1,23 @@
+{% extends "sitio/layout.html" %}
+
+{% load static %}
+
+{% block content %}
+<section class="row mt-3">
+
+  <!-- Titulo -->
+  <div class="col-12 mb-4 text-center text-center text-md-left ">
+    <h3 class="display-4 text-uppercase fw-bold">Acerca de...</h3>
+    <h5 class="margen">Mascotita nace a traves de una idea entre un grupo de amigas, las cuales
+      comenzó a realizar la venta de productos para mascotas como bandanas, correas e
+      identificaciones, todo esto para ayudar a una fundación sin fines de lucro, todo partió a través de las redes
+      sociales. Debido a que esta pyme se hizo tan reconocida, debimos de dar un paso más allá y gracias a un equipo
+      de programadores hemos podido lanzar finalmente esta página web, para todos aquellos y aquellas que tengan su
+      regalon
+      y deseen regalarles algún accesorio o comprarles la comida que tanto les gusta.</h5>
+    <img src="{% static 'sitio/img/perrito.png' %}" alt="perrito">
+  </div>
+
+
+</section>
+{% endblock %}
